@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Perfect",
+        "artists": ["Ed Sheeran"],
+        "genres": ["Top 40 + Contemporary"],
+        "year": 2017
+    },
+    {
+        "name": "Shallow",
+        "artists": ["Lady Gaga", "Bradley Cooper"],
+        "genres": ["Top 40 + Contemporary"],
+        "year": 2017
+    },
+    {
+        "name": "What's Going On",
+        "artists": ["Marvin Gaye"],
+        "genres": ["Motown + Funk + Soul"],
+        "year": 1971
+    },
+    {
+        "name": "Superstition",
+        "artists": ["Stevie Wonder"],
+        "genres": ["Motown + Funk + Soul"],
+        "year": 1972
+    },
+    {
+        "name": "Chicken Fried",
+        "artists": ["Zac Brown Band"],
+        "genres": ["Rock"],
+        "year": 2005
+    },
+    {
+        "name": "Brown Eyed Girl",
+        "artists": ["Van Morrison"],
+        "genres": ["Rock"],
+        "year": 1967
+    },
+    {
+        "name": "Hey Ya",
+        "artists": ["Outkast"],
+        "genres": ["Pop + Dance Throwbacks"],
+        "year": 2003
+    },
+    {
+        "name": "No Diggity",
+        "artists": ["Black Street"],
+        "genres": ["Pop + Dance Throwbacks"],
+        "year": 1996
+    },
+    {
+        "name": "A Thousand Years",
+        "artists": ["Christina Perri"],
+        "genres": ["Ceremony + Cocktail + Traditional"],
+        "year": 2011
+    },
+    {
+        "name": "Here Comes The Sun",
+        "artists": ["The Beatles"],
+        "genres": ["Ceremony + Cocktail + Traditional"],
+        "year": 1969
+    },
+    {
+        "name": "Marry You",
+        "artists": ["Bruno Mars"],
+        "genres": ["Ceremony + Cocktail + Traditional"],
+        "year": 2011
+    },
+    {
+        "name": "Somewhere Over The Rainbow",
+        "artists": ["Israel Kamakawiwo'ole"],
+        "genres": ["Ceremony + Cocktail + Traditional"],
+        "year": 1939
+    }
+]
