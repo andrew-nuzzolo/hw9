@@ -1,0 +1,99 @@
+<html>
+ 
+<head>
+ 
+    <title>Assignment 9 - JSON Song List</title>
+    <style>
+        h1 {
+            color:rgb(59, 61, 219);
+        }
+        body {
+            background-image: url('music.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color:rgb(59, 61, 219);
+            font-size: 20px;
+        }
+        .header {
+            font-size: 20px;
+            font-weight:600;
+        }
+    </style>
+
+    <script language="javascript">
+
+        function loadData(filter, genre) {
+            // Make an http request
+            request = new XMLHttpRequest();
+
+            // Open the json file
+            request.open("GET", "https://raw.githubusercontent.com/andrew-nuzzolo/hw9/main/songs.json", true);
+
+            request.onreadystatechange=function() {
+                // Get json file back
+                if (request.readyState == 4 && request.status == 200) {
+                    data_string = request.responseText;
+                    data_object = JSON.parse(data_string);
+                    if (filter == false) {
+                        // Part 2: serialized display
+                        document.getElementById("serialize").innerHTML = data_string;
+                        // Part 3: user friendly display
+                        result = "";
+                        for (i = 0; i < data_object.length; i++) {
+                            result += data_object[i]["name"] + "</br>"
+                            + "Artist: " + data_object[i]["artists"] + "</br>"
+                            + "Genre: " + data_object[i]["genres"] + "</br>"
+                            + "Released " + data_object[i]["year"] + "</br></br>";
+                        }
+                        document.getElementById("user_friendly").innerHTML = result;
+                    } else {
+                        result = "";
+                        for (i = 0; i < data_object.length; i++) {
+                            if (data_object[i]["genres"] == genre) {
+                                result += data_object[i]["name"] + "</br>";
+                            }
+                        }
+                        document.getElementById("filter_heading").innerHTML = "Songs with that genre:";
+                        document.getElementById("filter_data").innerHTML = result;
+                    }
+                }
+            }
+            request.send();
+        }
+   
+    </script>
+ 
+ 
+</head>
+ 
+ 
+<body onload="loadData(false)">
+   
+    <h1>JSON Song List</h1>
+    <div class="header">Serialized data:</div></br>
+    <div id="serialize"></div></br>
+    <div class="header">User friendly data:</div></br>
+    <div id="user_friendly"></div></br>
+    <div class="header">Filtered data:</div></br>
+    
+    <form>
+        <label for="genres">Genre:</label>
+        <select id="genres" name="genres">
+            <option value="Top 40 + Contemporary">Top 40 + Contemporary</option>
+            <option value="Motown + Funk + Soul">Motown + Funk + Soul</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop + Dance Throwbacks">Pop + Dance Throwbacks</option>
+            <option value="Ceremony + Cocktail + Traditional">Ceremony + Cocktail + Traditional</option>
+        </select>
+        <input type ="button" value="Filter"  name=“btn1” onclick="loadData(true, document.getElementById('genres').value)"/>
+    </form>
+    <div id="filter_heading"></div>
+    <div id="filter_data"></div>
+ 
+ 
+</body>
+ 
+ 
+</html>
